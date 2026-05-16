@@ -14,7 +14,7 @@ def crop_center(image, crop_size=(64, 64)):
 def main():
     # 定义路径
     background_folder = Path("background")
-    backborder_path = Path("backBorder.png")
+    backborder_path = Path("v2Bg64.png")
     relic_folder = Path("拾取物列表_EN/圣遗物")
     output_folder = Path("output")
     
@@ -84,7 +84,7 @@ def main():
         relic_resized = relic_image.resize(relic_new_size, PILImage.LANCZOS)
         
         # 计算居中位置并添加偏移（向右5像素，向下5像素）
-        paste_x = (center_crop.size[0] - relic_new_size[0]) // 2 + 5
+        paste_x = (center_crop.size[0] - relic_new_size[0]) // 2 - 3
         paste_y = (center_crop.size[1] - relic_new_size[1]) // 2 + 1
         
         # 创建透明图层用于粘贴圣遗物图片
